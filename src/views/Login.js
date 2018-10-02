@@ -15,7 +15,7 @@ class Login extends Component {
           						<Input type="password" name="password" id="passwordLogin" placeholder="Senha" />
                             </FormGroup>
 							<Button color="primary float-right">Login</Button>
-							<Button outline color="primary">Registrar</Button>{' '}
+							<Button outline color="primary">Registrar</Button>
                         </Form>
                     </Col>
                 </Row>
