@@ -8,12 +8,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import NotFound from './NotFound';
 import Login from './views/Login';
+import ProjectRegister from './views/ProjectRegister'
 
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route path="/" exact={true} component={App} />
             <Route path="/login" exact={true} component={Login} />
+            <Route path="/project/register" exact={true} component={ProjectRegister} />
             <Route path="/404" component={NotFound} />
         </Switch>
     </ BrowserRouter>
