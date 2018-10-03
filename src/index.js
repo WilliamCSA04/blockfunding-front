@@ -18,7 +18,7 @@ ReactDOM.render(
             <Route path="/login" exact={true} component={Login} />
             <Route path="/register" exact={true} component={Register} />
             <Route path="/project/register" exact={true} component={ProjectRegister} />
-            <Route path="/404" component={NotFound} />
+            <Route path="*" component={NotFound} />
         </Switch>
     </ BrowserRouter>
     , document.getElementById('root'));
