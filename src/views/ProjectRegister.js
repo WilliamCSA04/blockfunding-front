@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import Header from './components/Header';
+import Register from './components/Register';
+import { Button, CardBody, CardHeader, Col, FormGroup, Input, Label, Form, CardFooter } from 'reactstrap';
 
 class ProjectRegister extends Component {
     render() {
         return (
             <React.Fragment>
                 <Header />
-                <Container>
-                    <Row>
-                        <Col md={{size:6, offset: 3}}>
-                            <Form>
-                                <FormGroup>
-                                    <Label for="projectName">Nome do projeto</Label>
-                                    <Input type="text" name="projectName" id="projectName" placeholder="Digite o nome de seu projeto" />
-                                    <Label for="projectDescription">Descrição do projeto</Label>
-                                    <Input type="textarea" name="projectDescription" id="projectDescription" />
-                                </FormGroup>
-                                <Button color="primary float-right">Criar projeto</Button>
-                            </Form>
-                        </Col>
-                    </Row>
-                </Container>
+                <Register>
+                    <CardHeader>
+                        <strong>Projeto</strong>
+                    </CardHeader>
+                    <CardBody>
+                        <Form>
+                            <FormGroup>
+                                <Label htmlFor="Project">Nome do Projeto</Label>
+                                <Input type="text" id="project" placeholder="Digite o nome do projeto" />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="vat">Descrição do projeto</Label>
+                                <Input type="textarea" id="vat" placeholder="Descreva seu projeto" />
+                            </FormGroup>
+                            <div className="form-actions">
+                                <Button type="submit" color="primary">Criar Projeto</Button>
+                                <Button color="secondary">Cancelar</Button>
+                            </div>
+                        </Form>
+                    </CardBody>
+                </Register>
             </React.Fragment>
         );
     }
