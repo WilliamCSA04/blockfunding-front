@@ -9,12 +9,14 @@ import App from './App';
 import NotFound from './NotFound';
 import Login from './views/Login';
 import ProjectRegister from './views/ProjectRegister'
+import Register from './views/UserRegister'
 
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route path="/" exact={true} component={App} />
             <Route path="/login" exact={true} component={Login} />
+            <Route path="/register" exact={true} component={Register} />
             <Route path="/project/register" exact={true} component={ProjectRegister} />
             <Route path="/404" component={NotFound} />
         </Switch>
