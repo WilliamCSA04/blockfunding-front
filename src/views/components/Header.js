@@ -6,13 +6,13 @@ class Header extends Component {
     render() {
         return (
             <Navbar color="dark" light expand="md">
-                <NavbarBrand href="/" white>Blockfunding</NavbarBrand>
+                <NavbarBrand href="/" className="text-white">Blockfunding</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink href="/login">Login</NavLink>
+                        <NavLink href="/login" className="text-white">Login</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/register">Registrar</NavLink>
+                        <NavLink href="/register" className="text-white">Registrar</NavLink>
                     </NavItem>
                 </Nav>
             </Navbar>
