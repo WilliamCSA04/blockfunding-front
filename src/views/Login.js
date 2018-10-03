@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
-
+import Header from './components/Header.js'
 
 
 class Login extends Component {
     render() {
         return (
+            <React.Fragment>
+            <Header />
             <div className="app flex-row align-items-center">
                 <Container>
                 <Row className="justify-content-center">
@@ -58,6 +60,7 @@ class Login extends Component {
                 </Row>
                 </Container>
             </div>
+            </React.Fragment>
         );
     }
 }

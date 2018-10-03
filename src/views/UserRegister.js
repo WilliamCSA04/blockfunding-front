@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import Header from './components/Header.js'
 
 class UserRegister extends Component {
   render() {
     return (
+      <React.Fragment>
+        <Header />
       <div className="app flex-row align-items-center">
         <Container>
           <Row className="justify-content-center">
@@ -59,6 +62,7 @@ class UserRegister extends Component {
           </Row>
         </Container>
       </div>
+      </React.Fragment>
     );
   }
 }
