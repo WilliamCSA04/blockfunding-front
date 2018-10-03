@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 class UserRegister extends Component {
   render() {
@@ -11,15 +12,15 @@ class UserRegister extends Component {
               <Card className="mx-4">
                 <CardBody className="p-4">
                   <Form>
-                    <h1>UserRegister</h1>
-                    <p className="text-muted">Create your account</p>
+                    <h1>Cadastro</h1>
+                    <p className="text-muted">Crie sua conta</p>
                     <InputGroup className="mb-3">
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
                           <i className="icon-user"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="text" placeholder="Username" autoComplete="username" />
+                      <Input type="text" placeholder="Nome de usuario" autoComplete="username" />
                     </InputGroup>
                     <InputGroup className="mb-3">
                       <InputGroupAddon addonType="prepend">
@@ -33,7 +34,7 @@ class UserRegister extends Component {
                           <i className="icon-lock"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="password" placeholder="Password" autoComplete="new-password" />
+                      <Input type="password" placeholder="Senha" autoComplete="new-password" />
                     </InputGroup>
                     <InputGroup className="mb-4">
                       <InputGroupAddon addonType="prepend">
@@ -41,18 +42,15 @@ class UserRegister extends Component {
                           <i className="icon-lock"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="password" placeholder="Repeat password" autoComplete="new-password" />
+                      <Input type="password" placeholder="Confimação de Senha" autoComplete="new-password" />
                     </InputGroup>
-                    <Button color="success" block>Create Account</Button>
+                    <Button color="success" block>Criar conta</Button>
                   </Form>
                 </CardBody>
                 <CardFooter className="p-4">
                   <Row>
-                    <Col xs="12" sm="6">
-                      <Button className="btn-facebook" block><span>facebook</span></Button>
-                    </Col>
-                    <Col xs="12" sm="6">
-                      <Button className="btn-twitter" block><span>twitter</span></Button>
+                    <Col xs="12" className="text-center">
+                      <Link to="/login"><Button color="link" className="px-0">Já possui uma conta?</Button></Link>
                     </Col>
                   </Row>
                 </CardFooter>
