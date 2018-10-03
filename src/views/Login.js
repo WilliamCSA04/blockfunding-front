@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import Header from './components/Header';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
 
@@ -50,7 +49,7 @@ class Login extends Component {
                             <div>
                             <h2>Cadastro</h2>
                             <p>Cadastre-se para poder cadastrar seu próprio projeto e ver projeto de outros usuarios.</p>
-                            <Button color="primary" className="mt-3" active>Cadastrar</Button>
+                            <Link to="/register"><Button color="primary" className="mt-3" active>Cadastrar</Button></Link>
                             </div>
                         </CardBody>
                         </Card>
