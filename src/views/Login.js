@@ -105,9 +105,6 @@ class Login extends Component {
                                 <Col xs="6">
                                 <Button color="primary" className="px-4" onClick={this.onClick}>Login</Button>
                                 </Col>
-                                <Col xs="6" className="text-right">
-                                <Button color="link" className="px-0">Esqueceu sua senha?</Button>
-                                </Col>
                             </Row>
                             </Form>
                         </CardBody>
