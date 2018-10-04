@@ -3,3 +3,9 @@
 `npm install`
 
 `npm start`
+
+## Routes
+
+* /login
+* /register
+* /project/register
