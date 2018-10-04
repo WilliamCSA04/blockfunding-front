@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import Header from './components/Header.js'
 import { Server, Faker, uid } from 'react-mock'
-
+import axios from "axios"
 
 class Login extends Component {
 
@@ -17,6 +17,39 @@ class Login extends Component {
 
     onChange = (event) => {
         this.setState({[event.target.name]: event.target.value})
+    }
+
+    
+    componentWillMount() {      
+        const endPoint = '/router/auth/oauth/token'
+        
+        const userExperienceData = {
+            "access_token": "bb84ad11-283d-43d7-b982-75ebc8eb94a5",
+            "token_type": "bearer",
+            "expires_in": 43200,
+            "scope": "read write"
+        }
+        
+        const requestHandler = (request, generator) => {
+        return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
+        }
+        
+        Server.mockGet(endPoint, requestHandler)
+        Server.on()
+    }
+
+    componentWillUnmount() {
+        Server.off()
+    }
+    
+    
+
+    onClick = (event) => {
+        event.preventDefault()
+
+        axios.get('/router/auth/oauth/token').then(({ data }) => {
+            console.log(data)
+        });
     }
 
     render() {
@@ -51,7 +84,7 @@ class Login extends Component {
                             </InputGroup>
                             <Row>
                                 <Col xs="6">
-                                <Button color="primary" className="px-4">Login</Button>
+                                <Button color="primary" className="px-4" onClick={this.onClick}>Login</Button>
                                 </Col>
                                 <Col xs="6" className="text-right">
                                 <Button color="link" className="px-0">Esqueceu sua senha?</Button>
