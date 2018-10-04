@@ -30,8 +30,13 @@ class Login extends Component {
             "scope": "read write"
         }
         
-        const requestHandler = (request, generator) => {
-        return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
+            const requestHandler = (request, generator) => {
+            const isUsernameValid = request.requestBody === "admin@admin.com"
+            const isPasswordValid = request.requestBody === "admin"
+            if(isUsernameValid && isPasswordValid){
+                return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
+            }
+            return [401, { 'Content-Type': 'application/json' }, JSON.stringify({"error": "Usuario invalido"})];
         }
         
         Server.mockPost(endPoint, requestHandler)
@@ -59,6 +64,8 @@ class Login extends Component {
         axios.post('/router/auth/oauth/token', body).then(({ data }) => {
             sessionStorage.setItem("userCredentials", JSON.stringify(data))
             alert("Usuario logado")
+        }).catch((data) => {
+            alert(data.response.data.error)
         });
     }
 
