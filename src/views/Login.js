@@ -58,6 +58,7 @@ class Login extends Component {
         }
         axios.post('/router/auth/oauth/token', body).then(({ data }) => {
             sessionStorage.setItem("userCredentials", JSON.stringify(data))
+            alert("Usuario logado")
         });
     }
 
