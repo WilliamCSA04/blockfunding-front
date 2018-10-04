@@ -31,8 +31,8 @@ class Login extends Component {
         }
         
             const requestHandler = (request, generator) => {
-            const isUsernameValid = request.requestBody === "admin@admin.com"
-            const isPasswordValid = request.requestBody === "admin"
+            const isUsernameValid = request.requestBody == "admin@admin.com"
+            const isPasswordValid = request.requestBody == "admin"
             if(isUsernameValid && isPasswordValid){
                 return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
             }
@@ -53,20 +53,22 @@ class Login extends Component {
         event.preventDefault();
         if(this.state.email.length == 0){
             alert("Por favor, preencha um email");
+        }else{
+            if(this.state.password.length == 0){
+                alert("Por favor, preencha uma senha")
+            }else{
+                const body = {
+                    username: this.state.email,
+                    password: this.state.password
+                }
+                axios.post('/router/auth/oauth/token', body).then(({ data }) => {
+                    sessionStorage.setItem("userCredentials", JSON.stringify(data))
+                    alert("Usuario logado")
+                }).catch((data) => {
+                    alert(data.response.data.error)
+                });
+            }
         }
-        if(this.state.password.length == 0){
-            alert("Por favor, preencha uma senha")
-        }
-        const body = {
-            username: this.state.email,
-            password: this.state.password
-        }
-        axios.post('/router/auth/oauth/token', body).then(({ data }) => {
-            sessionStorage.setItem("userCredentials", JSON.stringify(data))
-            alert("Usuario logado")
-        }).catch((data) => {
-            alert(data.response.data.error)
-        });
     }
 
     render() {
