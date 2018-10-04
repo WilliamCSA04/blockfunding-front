@@ -34,7 +34,7 @@ class Login extends Component {
         return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
         }
         
-        Server.mockGet(endPoint, requestHandler)
+        Server.mockPost(endPoint, requestHandler)
         Server.on()
     }
 
@@ -45,10 +45,19 @@ class Login extends Component {
     
 
     onClick = (event) => {
-        event.preventDefault()
-
-        axios.get('/router/auth/oauth/token').then(({ data }) => {
-            console.log(data)
+        event.preventDefault();
+        if(this.state.email.length == 0){
+            alert("Por favor, preencha um email");
+        }
+        if(this.state.password.length == 0){
+            alert("Por favor, preencha uma senha")
+        }
+        const body = {
+            username: this.state.email,
+            password: this.state.password
+        }
+        axios.post('/router/auth/oauth/token', body).then(({ data }) => {
+            sessionStorage.setItem("userCredentials", JSON.stringify(data))
         });
     }
 
