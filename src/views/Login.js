@@ -31,8 +31,8 @@ class Login extends Component {
         }
         
             const requestHandler = (request, generator) => {
-            const isUsernameValid = request.requestBody == "admin@admin.com"
-            const isPasswordValid = request.requestBody == "admin"
+            const isUsernameValid = request.requestBody.username == "admin@admin.com"
+            const isPasswordValid = request.requestBody.password == "admin"
             if(isUsernameValid && isPasswordValid){
                 return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
             }
