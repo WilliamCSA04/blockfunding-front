@@ -4,6 +4,8 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
+import './styles/style.css';
+import 'simple-line-icons/css/simple-line-icons.css';
 
 import App from './App';
 import NotFound from './NotFound';
