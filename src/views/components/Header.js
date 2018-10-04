@@ -6,7 +6,8 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink
+    NavLink,
+    Container
 } from 'reactstrap';
 
 class Header extends Component {
@@ -26,7 +27,7 @@ class Header extends Component {
     render() {
         return (
             <Navbar color="dark" light expand="md">
-                <div className="container">
+                <Container>
                     <NavbarBrand href="/" className="text-white">Blockfunding</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
@@ -39,7 +40,7 @@ class Header extends Component {
                             </NavItem>
                         </Nav>
                     </Collapse>
-                </div>
+                </Container>
             </Navbar>
         );
     }
