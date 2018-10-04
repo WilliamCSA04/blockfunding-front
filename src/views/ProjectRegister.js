@@ -22,9 +22,12 @@ class ProjectRegister extends Component {
                                 <Label htmlFor="vat">Descrição do projeto</Label>
                                 <Input type="textarea" id="vat" placeholder="Descreva seu projeto" />
                             </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="funds">Fundos necessários</Label>
+                                <Input type="text" id="funds" placeholder="Ex: R$1000,00" />
+                            </FormGroup>
                             <div className="form-actions">
                                 <Button type="submit" color="primary">Criar Projeto</Button>
-                                <Button color="secondary">Cancelar</Button>
                             </div>
                         </Form>
                     </CardBody>
