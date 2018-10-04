@@ -6,6 +6,19 @@ import { Server, Faker, uid } from 'react-mock'
 
 
 class Login extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            email: "",
+            password: "" 
+        }
+    }
+
+    onChange = (event) => {
+        this.setState({[event.target.name]: event.target.value})
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -26,7 +39,7 @@ class Login extends Component {
                                     <i className="icon-user"></i>
                                 </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="email" placeholder="email" autoComplete="username" />
+                                <Input type="email" placeholder="email" autoComplete="username" name="email" onChange={this.onChange} />
                             </InputGroup>
                             <InputGroup className="mb-4">
                                 <InputGroupAddon addonType="prepend">
@@ -34,7 +47,7 @@ class Login extends Component {
                                     <i className="icon-lock"></i>
                                 </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="password" placeholder="Senha" autoComplete="current-password" />
+                                <Input type="password" placeholder="Senha" autoComplete="current-password" name="password" onChange={this.onChange}/>
                             </InputGroup>
                             <Row>
                                 <Col xs="6">
