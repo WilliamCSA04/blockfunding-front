@@ -1,9 +1,48 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Register from './components/Register';
+import axios from 'axios';
 import { Button, CardBody, CardHeader, FormGroup, Input, Label, Form } from 'reactstrap';
 
 class ProjectRegister extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            email: "",
+            description: "",
+            funds: "",
+        }
+    }
+
+    componentWillMount() {      
+        const endPoint = '/projects'
+        
+        const userExperienceData = {
+            "name": this.state.name,
+            "description": this.state.description,
+            "neededFunds": this.state.funds,
+        }
+        
+            const requestHandler = (request, generator) => {
+                return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
+        }
+    }
+
+    onClick = (event) => {
+        event.preventDefault();
+        
+        const body = {
+            name: this.state.email,
+            description: this.state.description,
+            neededFunds: this.state.funds
+        }
+        axios.post('/project', body).then(({ data }) => {
+            alert("Projeto criado")
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
