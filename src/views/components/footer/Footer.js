@@ -12,7 +12,7 @@ class Footer extends Component {
     }
     render() {
         return (
-            <div class="footer-area text-center bg-white">
+            <div className="footer-area text-center bg-white">
                 <span> {this.state.date} Blockfunding </span>
             </div>
         );

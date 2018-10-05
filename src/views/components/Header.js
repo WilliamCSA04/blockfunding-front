@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { 
+import {
     Collapse,
     Navbar,
     NavbarToggler,
@@ -7,44 +7,59 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Container
+    Container,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
 } from 'reactstrap';
 
 class Header extends Component {
 
     constructor(props) {
         super(props);
-    
+
         this.state = {
-          isOpen: false
+            isOpen: false
         };
-      }
-      
-      toggle = () => {
+    }
+
+    toggle = () => {
         this.setState({
-          isOpen: !this.state.isOpen
+            isOpen: !this.state.isOpen
         });
-      }
+    }
+
+    logout = () => {
+        sessionStorage.setItem("userCredentials", undefined);
+    }
 
     links = () => {
         const isLogged = sessionStorage.userCredentials !== undefined
-        if(isLogged){
+        if (isLogged) {
             return (
                 <React.Fragment>
-                    <NavItem>
-                        <NavLink href="/project/register">Criar Projeto</NavLink>
-                    </NavItem>
+                    <UncontrolledDropdown nav inNavbar>
+                        <DropdownToggle nav caret>
+                            <i className="fa fa-user"></i>
+                        </DropdownToggle>
+                        <DropdownMenu right>
+                            <DropdownItem href="/dashboard">
+                                Dashboard
+                            </DropdownItem>
+                            <DropdownItem href="/account">
+                                My Account
+                            </DropdownItem>
+                            <DropdownItem onClick={this.logout}>
+                                Logout
+                            </DropdownItem>
+                        </DropdownMenu>
+                    </UncontrolledDropdown>
                 </React.Fragment>
             )
         } else {
             return (
                 <React.Fragment>
-                    <NavItem>
-                        <NavLink href="/">Home</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/projects">Projects</NavLink>
-                    </NavItem>
                     <NavItem>
                         <NavLink href="/login">Login</NavLink>
                     </NavItem>
@@ -64,6 +79,12 @@ class Header extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="/">Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/projects">Projects</NavLink>
+                            </NavItem>
                             {this.links()}
                         </Nav>
                     </Collapse>

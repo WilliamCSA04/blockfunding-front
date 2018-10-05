@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { Button, Col, Container, Row } from 'reactstrap';
 import './home.sass'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 class Home extends Component {
     render() {
         return (
@@ -40,7 +38,7 @@ class Home extends Component {
                             </Col>
                             <Col md="6">
                                 <h1>Just like a Stock Exchange!</h1>
-                                <i class="fa fa-btc big-fa-icon"></i>
+                                <i class="fa fa-line-chart big-fa-icon"></i>
                             </Col>
                         </Row>
                     </Container>
