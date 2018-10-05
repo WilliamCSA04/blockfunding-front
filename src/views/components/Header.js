@@ -12,6 +12,20 @@ import {
 
 class Header extends Component {
 
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          isOpen: false
+        };
+      }
+      
+      toggle = () => {
+        this.setState({
+          isOpen: !this.state.isOpen
+        });
+      }
+
     links = () => {
         const isLogged = sessionStorage.userCredentials !== undefined
         if(isLogged){
@@ -42,7 +56,7 @@ class Header extends Component {
                 <Container>
                     <NavbarBrand href="/" className="text-white">Blockfunding</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
-                    <Collapse navbar>
+                    <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             {this.links()}
                         </Nav>
