@@ -4,6 +4,7 @@ import Register from './components/Register';
 import axios from 'axios';
 import { Server, Faker, uid } from 'react-mock'
 import { Button, CardBody, CardHeader, FormGroup, Input, Label, Form } from 'reactstrap';
+import Footer from './components/footer/Footer';
 
 class ProjectRegister extends Component {
 
@@ -80,6 +81,7 @@ class ProjectRegister extends Component {
                         </Form>
                     </CardBody>
                 </Register>
+                <Footer />
             </React.Fragment>
         );
     }

@@ -4,6 +4,7 @@ import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGr
 import Header from './components/Header.js'
 import { Server, Faker, uid } from 'react-mock'
 import axios from "axios"
+import Footer from './components/footer/Footer';
 
 class Login extends Component {
 
@@ -124,6 +125,7 @@ class Login extends Component {
                 </Row>
                 </Container>
             </div>
+            <Footer />
             </React.Fragment>
         );
     }

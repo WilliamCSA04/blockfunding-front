@@ -32,7 +32,7 @@ class Header extends Component {
             return (
                 <React.Fragment>
                     <NavItem>
-                        <NavLink href="/project/register" className="text-white">Criar Projeto</NavLink>
+                        <NavLink href="/project/register">Criar Projeto</NavLink>
                     </NavItem>
                 </React.Fragment>
             )
@@ -40,10 +40,16 @@ class Header extends Component {
             return (
                 <React.Fragment>
                     <NavItem>
-                        <NavLink href="/login" className="text-white">Login</NavLink>
+                        <NavLink href="/">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/register" className="text-white">Registrar</NavLink>
+                        <NavLink href="/projects">Projects</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/login">Login</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/register">Registrar</NavLink>
                     </NavItem>
                 </React.Fragment>
             )
@@ -52,9 +58,9 @@ class Header extends Component {
 
     render() {
         return (
-            <Navbar color="dark" light expand="md">
+            <Navbar className="fixed-top" color="white" light expand="md">
                 <Container>
-                    <NavbarBrand href="/" className="text-white">Blockfunding</NavbarBrand>
+                    <NavbarBrand href="/">Blockfunding</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

@@ -3,6 +3,7 @@ import { Button, CardBody, CardFooter, Col, Form, Input, InputGroup, InputGroupA
 import { Link } from 'react-router-dom'
 import Header from './components/Header.js'
 import Register from './components/Register.js';
+import Footer from './components/footer/Footer';
 
 class UserRegister extends Component {
   render() {
@@ -57,6 +58,7 @@ class UserRegister extends Component {
             </CardFooter>
           </Register>
       </div>
+      <Footer />
       </React.Fragment>
     );
   }
