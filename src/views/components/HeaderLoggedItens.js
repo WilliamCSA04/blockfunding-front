@@ -7,6 +7,12 @@ import {
 } from 'reactstrap';
 
 class HeaderLoggedItens extends Component {
+
+    
+    logout = () => {
+        sessionStorage.removeItem("userCredentials");
+    }
+
     render() {
         return (
             <UncontrolledDropdown nav inNavbar>

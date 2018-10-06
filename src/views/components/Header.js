@@ -7,13 +7,10 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Container,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
+    Container
 } from 'reactstrap';
 import HeaderLoggedItens from './HeaderLoggedItens';
+import HeaderNotLoggedItens from './HeaderNotLoggedItens';
 
 class Header extends Component {
 
@@ -31,10 +28,6 @@ class Header extends Component {
         });
     }
 
-    logout = () => {
-        sessionStorage.removeItem("userCredentials");
-    }
-
     links = () => {
         const isLogged = sessionStorage.userCredentials !== undefined
         if (isLogged) {
@@ -43,14 +36,7 @@ class Header extends Component {
             )
         } else {
             return (
-                <React.Fragment>
-                    <NavItem>
-                        <NavLink href="/login">Login</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/register">Registrar</NavLink>
-                    </NavItem>
-                </React.Fragment>
+                <HeaderNotLoggedItens />
             )
         }
     }
