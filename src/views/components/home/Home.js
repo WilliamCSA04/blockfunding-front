@@ -34,11 +34,11 @@ class Home extends Component {
                         <Row>
                             <Col md="6">
                                 <h1>All kinds of currencies!</h1>
-                                <i class="fa fa-btc big-fa-icon"></i>
+                                <i className="fa fa-btc big-fa-icon"></i>
                             </Col>
                             <Col md="6">
                                 <h1>Just like a Stock Exchange!</h1>
-                                <i class="fa fa-line-chart big-fa-icon"></i>
+                                <i className="fa fa-line-chart big-fa-icon"></i>
                             </Col>
                         </Row>
                     </Container>

@@ -31,7 +31,7 @@ class Header extends Component {
     }
 
     logout = () => {
-        sessionStorage.setItem("userCredentials", undefined);
+        sessionStorage.removeItem("userCredentials");
     }
 
     links = () => {
