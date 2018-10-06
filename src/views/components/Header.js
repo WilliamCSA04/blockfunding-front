@@ -13,6 +13,7 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
+import HeaderLoggedItens from './HeaderLoggedItens';
 
 class Header extends Component {
 
@@ -38,24 +39,7 @@ class Header extends Component {
         const isLogged = sessionStorage.userCredentials !== undefined
         if (isLogged) {
             return (
-                <React.Fragment>
-                    <UncontrolledDropdown nav inNavbar>
-                        <DropdownToggle nav caret>
-                            <i className="fa fa-user"></i>
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem href="/dashboard">
-                                Dashboard
-                            </DropdownItem>
-                            <DropdownItem href="/account">
-                                My Account
-                            </DropdownItem>
-                            <DropdownItem onClick={this.logout}>
-                                Logout
-                            </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
-                </React.Fragment>
+                <HeaderLoggedItens />
             )
         } else {
             return (
