@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import { Button, Col, Container, Row } from 'reactstrap';
 import './home.sass'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
