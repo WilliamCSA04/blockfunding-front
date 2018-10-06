@@ -8,11 +8,6 @@ import {
 
 class HeaderLoggedItens extends Component {
 
-    
-    logout = () => {
-        sessionStorage.removeItem("userCredentials");
-    }
-
     render() {
         return (
             <UncontrolledDropdown nav inNavbar>
@@ -26,7 +21,7 @@ class HeaderLoggedItens extends Component {
                     <DropdownItem href="/account">
                         My Account
                     </DropdownItem>
-                    <DropdownItem onClick={this.logout}>
+                    <DropdownItem onClick={this.props.logout}>
                         Logout
                     </DropdownItem>
                 </DropdownMenu>

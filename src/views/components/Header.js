@@ -16,9 +16,10 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
-
+        const isLogged = sessionStorage.userCredentials !== undefined
         this.state = {
-            isOpen: false
+            isOpen: false,
+            logged: isLogged
         };
     }
 
@@ -28,11 +29,15 @@ class Header extends Component {
         });
     }
 
+    logout = () => {
+        this.setState({logged: false})
+        sessionStorage.removeItem("userCredentials");
+    }
+
     links = () => {
-        const isLogged = sessionStorage.userCredentials !== undefined
-        if (isLogged) {
+        if (this.state.logged) {
             return (
-                <HeaderLoggedItens />
+                <HeaderLoggedItens logout={this.logout}/>
             )
         } else {
             return (
