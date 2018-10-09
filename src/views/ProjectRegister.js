@@ -59,24 +59,24 @@ class ProjectRegister extends Component {
                 <Header />
                 <Register>
                     <CardHeader>
-                        <strong>Projeto</strong>
+                        <strong>Project</strong>
                     </CardHeader>
                     <CardBody>
                         <Form>
                             <FormGroup>
-                                <Label htmlFor="Project">Nome do Projeto</Label>
-                                <Input type="text" id="project" placeholder="Digite o nome do projeto" name="name" onChange={this.onChange}/>
+                                <Label htmlFor="Project">Project Name</Label>
+                                <Input type="text" id="project" placeholder="Type a name to your project" name="name" onChange={this.onChange}/>
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="vat">Descrição do projeto</Label>
-                                <Input type="textarea" id="vat" placeholder="Descreva seu projeto" name="description" onChange={this.onChange}/>
+                                <Label htmlFor="vat">Project Description</Label>
+                                <Input type="textarea" id="vat" placeholder="Describe your project" name="description" onChange={this.onChange}/>
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="funds">Fundos necessários</Label>
+                                <Label htmlFor="funds">Funds require</Label>
                                 <Input type="text" id="funds" placeholder="Ex: 1000" name="funds" onChange={this.onChange}/>
                             </FormGroup>
                             <div className="form-actions">
-                                <Button type="submit" color="primary" onClick={this.onClick}>Criar Projeto</Button>
+                                <Button type="submit" color="primary" onClick={this.onClick}>Register Project</Button>
                             </div>
                         </Form>
                     </CardBody>
