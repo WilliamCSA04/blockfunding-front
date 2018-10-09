@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Col, Container, Row } from 'reactstrap';
 import './projects.sass'
+import '../shared/definitions.sass'
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 
