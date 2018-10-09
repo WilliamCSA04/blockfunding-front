@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
-import Header from './components/Header.js'
+import Header from './components/header/Header.js'
 import { Server, Faker, uid } from 'react-mock'
 import axios from "axios"
 import Footer from './components/footer/Footer';

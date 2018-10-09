@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
+import Header from './components/header/Header';
 import Register from './components/Register';
 import axios from 'axios';
 import { Server, Faker, uid } from 'react-mock'

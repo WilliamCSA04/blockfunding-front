@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, CardBody, CardFooter, Col, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import { Link } from 'react-router-dom'
-import Header from './components/Header.js'
+import Header from './components/header/Header.js'
 import Register from './components/Register.js';
 import Footer from './components/footer/Footer';
 
@@ -11,7 +11,7 @@ class UserRegister extends Component {
       <React.Fragment>
         <Header />
         <div className="app flex-row align-items-center">
-        <Register>
+          <Register>
             <CardBody className="p-4">
               <Form>
                 <h1>Cadastro</h1>
@@ -57,8 +57,8 @@ class UserRegister extends Component {
               </Row>
             </CardFooter>
           </Register>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
       </React.Fragment>
     );
   }

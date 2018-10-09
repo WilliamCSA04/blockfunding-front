@@ -12,6 +12,7 @@ import NotFound from './NotFound';
 import Login from './views/Login';
 import ProjectRegister from './views/ProjectRegister'
 import Register from './views/UserRegister'
+import Projects from './views/components/projects/Projects'
 
 ReactDOM.render(
     <BrowserRouter>
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Route path="/login" exact={true} component={Login} />
             <Route path="/register" exact={true} component={Register} />
             <Route path="/project/register" exact={true} component={ProjectRegister} />
+            <Route path="/projects" exact={true} component={Projects} />
             <Route path="*" component={NotFound} />
         </Switch>
     </ BrowserRouter>
