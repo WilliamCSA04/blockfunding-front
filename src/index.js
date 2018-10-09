@@ -10,7 +10,7 @@ import 'simple-line-icons/css/simple-line-icons.css';
 import App from './App';
 import NotFound from './NotFound';
 import Login from './views/Login';
-import ProjectRegister from './views/ProjectRegister'
+import ProjectRegister from './views/components/projects/ProjectRegister'
 import Register from './views/UserRegister'
 import Projects from './views/components/projects/Projects'
 

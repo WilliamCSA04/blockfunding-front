@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Header from './components/header/Header';
-import Register from './components/Register';
+import Header from '../../components/header/Header';
+import Register from '../../components/Register';
 import axios from 'axios';
 import { Server, Faker, uid } from 'react-mock'
 import { Button, CardBody, CardHeader, FormGroup, Input, Label, Form } from 'reactstrap';
-import Footer from './components/footer/Footer';
+import Footer from '../../components/footer/Footer';
 
 class ProjectRegister extends Component {
 
