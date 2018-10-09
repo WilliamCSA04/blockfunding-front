@@ -13,7 +13,10 @@ class Projects extends Component {
                 <Header />
                 <div className="bg-white projects recent-project">
                     <Container>
-                        <h1 className="projects-title">Recent</h1>
+                        <div className="projects-header">
+                            <h1 className="projects-title">Recent</h1>
+                            <Link to="/projects/recent">See more...</Link>
+                        </div>
                         <Row>
                             <Col xs="12" sm="4" md="3">
                                 <Link to="/project/1">
@@ -63,9 +66,12 @@ class Projects extends Component {
                         </Row>
                     </Container>
                 </div>
-                <div className="bg-white projects recent-project">
+                <div className="bg-white projects">
                     <Container>
-                        <h1 className="projects-title">Trending</h1>
+                        <div className="projects-header">
+                            <h1 className="projects-title">Trending</h1>
+                            <Link to="/projects/trending">See more...</Link>
+                        </div>
                         <Row>
                             <Col xs="12" sm="4" md="3">
                                 <Link to="/project/1">
