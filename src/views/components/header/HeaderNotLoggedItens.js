@@ -12,7 +12,7 @@ class HeaderNotLoggedItens extends Component {
                     <NavLink href="/login">Login</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/register">Registrar</NavLink>
+                    <NavLink href="/register">Register</NavLink>
                 </NavItem>
             </React.Fragment>
         );
