@@ -86,14 +86,14 @@ class Login extends Component {
                         <CardBody>
                             <Form>
                             <h1>Login</h1>
-                            <p className="text-muted">Entre com sua conta</p>
+                            <p className="text-muted">Login with your account</p>
                             <InputGroup className="mb-3">
                                 <InputGroupAddon addonType="prepend">
                                 <InputGroupText>
                                     <i className="icon-user"></i>
                                 </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="email" placeholder="email" autoComplete="username" name="email" onChange={this.onChange} />
+                                <Input type="email" placeholder="Email" autoComplete="username" name="email" onChange={this.onChange} />
                             </InputGroup>
                             <InputGroup className="mb-4">
                                 <InputGroupAddon addonType="prepend">
@@ -101,7 +101,7 @@ class Login extends Component {
                                     <i className="icon-lock"></i>
                                 </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="password" placeholder="Senha" autoComplete="current-password" name="password" onChange={this.onChange}/>
+                                <Input type="password" placeholder="Password" autoComplete="current-password" name="password" onChange={this.onChange}/>
                             </InputGroup>
                             <Row>
                                 <Col xs="6">
@@ -114,9 +114,9 @@ class Login extends Component {
                         <Card className="text-white bg-primary py-5 d-md-down-none" style={{ width: 44 + '%' }}>
                         <CardBody className="text-center">
                             <div>
-                            <h2>Cadastro</h2>
-                            <p>Cadastre-se para poder cadastrar seu próprio projeto e ver projeto de outros usuarios.</p>
-                            <Link to="/register"><Button color="primary" className="mt-3" active>Cadastrar</Button></Link>
+                            <h2>Sign up</h2>
+                            <p>Sign up to register your own project and see others users projects.</p>
+                            <Link to="/register"><Button color="primary" className="mt-3" active>Sign up</Button></Link>
                             </div>
                         </CardBody>
                         </Card>
