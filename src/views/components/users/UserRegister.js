@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Button, CardBody, CardFooter, Col, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import { Link } from 'react-router-dom'
-import Header from './components/header/Header.js'
-import Register from './components/Register.js';
-import Footer from './components/footer/Footer';
+import Header from '../../components/header/Header.js'
+import Register from '../../components/Register.js';
+import Footer from '../../components/footer/Footer';
 
 class UserRegister extends Component {
   render() {

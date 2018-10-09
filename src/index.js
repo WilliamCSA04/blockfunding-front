@@ -11,7 +11,7 @@ import App from './App';
 import NotFound from './NotFound';
 import Login from './views/Login';
 import ProjectRegister from './views/components/projects/ProjectRegister'
-import Register from './views/UserRegister'
+import Register from './views/components/users/UserRegister'
 import Projects from './views/components/projects/Projects'
 
 ReactDOM.render(
