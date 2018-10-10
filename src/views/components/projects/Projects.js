@@ -9,7 +9,6 @@ class Projects extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header />
                 <div className="bg-white projects recent-project">
                     <Container>
                         <div className="projects-header">
@@ -94,7 +93,6 @@ class Projects extends Component {
                         </div>
                     </Container>
                 </div>
-                <Footer />
             </React.Fragment>
         );
     }

@@ -8,7 +8,7 @@ import Footer from '../../components/footer/Footer';
 
 class ProjectRegister extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -18,17 +18,17 @@ class ProjectRegister extends Component {
         }
     }
 
-    componentWillMount() {      
+    componentWillMount() {
         const endPoint = '/project'
-        
+
         const projectData = {
             "name": this.state.name,
             "description": this.state.description,
             "neededFunds": this.state.funds,
         }
-        
-            const requestHandler = (request, generator) => {
-                return [200, { 'Content-Type': 'application/json' }, JSON.stringify(projectData)];
+
+        const requestHandler = (request, generator) => {
+            return [200, { 'Content-Type': 'application/json' }, JSON.stringify(projectData)];
         }
         Server.mockPost(endPoint, requestHandler)
         Server.on()
@@ -38,7 +38,7 @@ class ProjectRegister extends Component {
         Server.off()
     }
     onChange = (event) => {
-        this.setState({[event.target.name]: event.target.value})
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     onClick = (event) => {
@@ -55,34 +55,30 @@ class ProjectRegister extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <Header />
-                <Register>
-                    <CardHeader>
-                        <strong>Project</strong>
-                    </CardHeader>
-                    <CardBody>
-                        <Form>
-                            <FormGroup>
-                                <Label htmlFor="Project">Project Name</Label>
-                                <Input type="text" id="project" placeholder="Type a name to your project" name="name" onChange={this.onChange}/>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="vat">Project Description</Label>
-                                <Input type="textarea" id="vat" placeholder="Describe your project" name="description" onChange={this.onChange}/>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="funds">Funds require</Label>
-                                <Input type="text" id="funds" placeholder="Ex: 1000" name="funds" onChange={this.onChange}/>
-                            </FormGroup>
-                            <div className="form-actions">
-                                <Button type="submit" color="primary" onClick={this.onClick}>Register Project</Button>
-                            </div>
-                        </Form>
-                    </CardBody>
-                </Register>
-                <Footer />
-            </React.Fragment>
+            <Register>
+                <CardHeader>
+                    <strong>Project</strong>
+                </CardHeader>
+                <CardBody>
+                    <Form>
+                        <FormGroup>
+                            <Label htmlFor="Project">Project Name</Label>
+                            <Input type="text" id="project" placeholder="Type a name to your project" name="name" onChange={this.onChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="vat">Project Description</Label>
+                            <Input type="textarea" id="vat" placeholder="Describe your project" name="description" onChange={this.onChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="funds">Funds require</Label>
+                            <Input type="text" id="funds" placeholder="Ex: 1000" name="funds" onChange={this.onChange} />
+                        </FormGroup>
+                        <div className="form-actions">
+                            <Button type="submit" color="primary" onClick={this.onClick}>Register Project</Button>
+                        </div>
+                    </Form>
+                </CardBody>
+            </Register>
         );
     }
 }
