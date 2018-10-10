@@ -7,23 +7,31 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './styles/style.css';
 import 'simple-line-icons/css/simple-line-icons.css';
 
-import App from './App';
+import Header from './views/components/header/Header';
+import Footer from './views/components/footer/Footer';
 import NotFound from './NotFound';
 import Login from './views/Login';
 import ProjectRegister from './views/components/projects/ProjectRegister'
 import Register from './views/components/users/UserRegister'
 import Projects from './views/components/projects/Projects'
+import Home from './views/components/home/Home';
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Switch>
-            <Route path="/" exact={true} component={App} />
-            <Route path="/login" exact={true} component={Login} />
-            <Route path="/register" exact={true} component={Register} />
-            <Route path="/project/register" exact={true} component={ProjectRegister} />
-            <Route path="/projects" exact={true} component={Projects} />
-            <Route path="*" component={NotFound} />
-        </Switch>
-    </ BrowserRouter>
+    <React.Fragment>
+        <Header />
+
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" exact={true} component={Home} />
+                <Route path="/login" exact={true} component={Login} />
+                <Route path="/register" exact={true} component={Register} />
+                <Route path="/project/register" exact={true} component={ProjectRegister} />
+                <Route path="/projects" exact={true} component={Projects} />
+                <Route path="*" component={NotFound} />
+            </Switch>
+        </ BrowserRouter>
+        <Footer />
+    </React.Fragment>
+
     , document.getElementById('root'));
 registerServiceWorker();
