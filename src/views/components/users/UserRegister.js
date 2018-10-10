@@ -8,7 +8,6 @@ import Footer from '../../components/footer/Footer';
 class UserRegister extends Component {
   render() {
     return (
-      <div className="app flex-row align-items-center">
         <Register>
           <CardBody className="p-4">
             <Form>
@@ -55,7 +54,6 @@ class UserRegister extends Component {
             </Row>
           </CardFooter>
         </Register>
-      </div>
     );
   }
 }
