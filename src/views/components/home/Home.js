@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { Button, Col, Container, Row } from 'reactstrap';
-import './home.sass'
+import './home.sass';
 
 class Home extends Component {
     render() {

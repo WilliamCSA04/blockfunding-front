@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './footer.sass'
+import './footer.sass';
 
 class Footer extends Component {
     constructor(props) {

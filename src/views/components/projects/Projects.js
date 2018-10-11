@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import { Button, Col, Container, Row } from 'reactstrap';
-import './projects.sass'
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'reactstrap';
+import './projects.sass';
 
 class Projects extends Component {
     render() {
