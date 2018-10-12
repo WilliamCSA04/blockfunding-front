@@ -18,7 +18,7 @@ class Projects extends Component {
                                 <Col xs="12" sm="4" md="3">
                                     <Link to="/project/1">
                                         <div className="project-banner">
-                                            <img src="https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg" />
+                                            <img src="https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg" alt="" />
                                             <div className="project-detail">
                                                 <h1 className="project-title">IA Project</h1>
                                                 <p className="project-small-desc">Help me make a AI to identify payment frauds.</p>
@@ -33,7 +33,7 @@ class Projects extends Component {
                                 <Col xs="12" sm="4" md="3">
                                     <Link to="/project/2">
                                         <div className="project-banner">
-                                            <img src="https://previews.123rf.com/images/yupiramos/yupiramos1506/yupiramos150603691/40932571-food-delivery-design.jpg" />
+                                            <img src="https://previews.123rf.com/images/yupiramos/yupiramos1506/yupiramos150603691/40932571-food-delivery-design.jpg" alt=""/>
                                             <div className="project-detail">
                                                 <h1 className="project-title">Food Project</h1>
                                                 <p className="project-small-desc">We want to make a food delivery app.</p>
@@ -48,7 +48,7 @@ class Projects extends Component {
                                 <Col xs="12" sm="4" md="3">
                                     <Link to="/project/3">
                                         <div className="project-banner">
-                                            <img src="https://i.ytimg.com/vi/jZl7lNwFK0g/maxresdefault.jpg" />
+                                            <img src="https://i.ytimg.com/vi/jZl7lNwFK0g/maxresdefault.jpg" alt="" />
                                             <div className="project-detail">
                                                 <h1 className="project-title">Video Sharer</h1>
                                                 <p className="project-small-desc">Want to be part of the best video sharing platform?</p>
@@ -75,7 +75,7 @@ class Projects extends Component {
                                 <Col xs="12" sm="4" md="3">
                                     <Link to="/project/1">
                                         <div className="project-banner">
-                                            <img src="https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg" />
+                                            <img src="https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg" alt="" />
                                             <div className="project-detail">
                                                 <h1 className="project-title">IA Project</h1>
                                                 <p className="project-small-desc">Help-me make a IA to identify payment frauds.</p>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
-import { Server, Faker, uid } from 'react-mock';
+import { Server } from 'react-mock';
 import axios from "axios";
 
 class Login extends Component {
@@ -31,8 +31,8 @@ class Login extends Component {
 
         const requestHandler = (request, generator) => {
             const response = JSON.parse(request.requestBody)
-            const isUsernameValid = response.username == "admin@admin.com"
-            const isPasswordValid = response.password == "admin"
+            const isUsernameValid = response.username === "admin@admin.com"
+            const isPasswordValid = response.password === "admin"
             if (isUsernameValid && isPasswordValid) {
                 return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
             }
@@ -51,10 +51,10 @@ class Login extends Component {
 
     onClick = (event) => {
         event.preventDefault();
-        if (this.state.email.length == 0) {
+        if (this.state.email.length === 0) {
             alert("Por favor, preencha um email");
         } else {
-            if (this.state.password.length == 0) {
+            if (this.state.password.length === 0) {
                 alert("Por favor, preencha uma senha")
             } else {
                 const body = {
