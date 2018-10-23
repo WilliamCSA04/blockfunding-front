@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Register from '../../components/Register';
-import axios from 'axios';
 import { Server } from 'react-mock';
 import { Button, CardBody, CardHeader, FormGroup, Input, Label, Form } from 'reactstrap';
+import { create } from '../../../shared/actions/Project'
 
 class ProjectRegister extends Component {
 
@@ -46,7 +46,7 @@ class ProjectRegister extends Component {
             description: this.state.description,
             neededFunds: this.state.funds
         }
-        axios.post('/project', body).then(({ data }) => {
+        create(body).then(({ data }) => {
             alert("Projeto criado")
         })
     }
