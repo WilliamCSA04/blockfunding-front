@@ -28,6 +28,7 @@ class Project extends Component {
                                 <div className="left-content">
                                     <div className="content-topic bg-white">
                                         <div>Valor arrecadado: <span className="green-font">R$: 1000,00</span></div>
+                                        <div>Valor necessário: <span className="red-font">R$: 2300,00</span></div>
                                     </div>
                                 </div>
                             </Col>
