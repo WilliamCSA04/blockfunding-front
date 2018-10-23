@@ -3,5 +3,6 @@ import Home from './Home';
 import TestUtils from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom'
 it('is a react element', () => {
-    TestUtils.isElement(<BrowserRouter><Home /></BrowserRouter>)
+    const result = TestUtils.isElement(<BrowserRouter><Home /></BrowserRouter>)
+    expect(result).toBe(true);
 });
