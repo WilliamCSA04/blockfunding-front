@@ -15,6 +15,9 @@ class HeaderLoggedItens extends Component {
                     <i className="fa fa-user"></i>
                 </DropdownToggle>
                 <DropdownMenu right>
+                    <DropdownItem href="/project/register">
+                        Create project
+                    </DropdownItem>
                     <DropdownItem href="/dashboard">
                         Dashboard
                     </DropdownItem>
