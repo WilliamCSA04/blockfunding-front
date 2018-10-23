@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import './project.sass';
+import { read } from '../../../shared/actions/Project'
 
 class Project extends Component {
+
+    
+    componentWillMount() {
+        const body = {}
+        read(body).then(data => {
+
+        });
+    }
+    
+
     render() {
         return (
             <React.Fragment>
