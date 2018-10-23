@@ -27,7 +27,7 @@ class Project extends Component {
                             <Col xs="12" sm="3">
                                 <div className="left-content">
                                     <div className="content-topic bg-white">
-                                        left area
+                                        <div>Valor arrecadado: <span className="green-font">R$: 1000,00</span></div>
                                     </div>
                                 </div>
                             </Col>
