@@ -62,8 +62,9 @@ class Login extends Component {
                     password: this.state.password
                 }
                 axios.post('/router/auth/oauth/token', body).then(({ data }) => {
-                    sessionStorage.setItem("userCredentials", JSON.stringify(data))
-                    alert("Usuario logado")
+                    sessionStorage.setItem("userCredentials", JSON.stringify(data));
+                    alert("Usuario logado");
+                    this.props.history.push('/projects');
                 }).catch((data) => {
                     alert(data.response.data.error)
                 });
