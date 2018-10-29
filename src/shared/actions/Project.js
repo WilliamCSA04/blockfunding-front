@@ -5,5 +5,5 @@ export function create(body){
 }
 
 export function read(body){
-    return axios.post('/', body)
+    return axios.get('/', body)
 }
