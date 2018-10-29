@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
-import { Server } from 'react-mock';
-import axios from "axios";
+import { login } from '../shared/actions/Login';
 
 class Login extends Component {
 
@@ -19,35 +18,6 @@ class Login extends Component {
     }
 
 
-    componentWillMount() {
-        const endPoint = '/router/auth/oauth/token'
-
-        const userExperienceData = {
-            "access_token": "bb84ad11-283d-43d7-b982-75ebc8eb94a5",
-            "token_type": "bearer",
-            "expires_in": 43200,
-            "scope": "read write"
-        }
-
-        const requestHandler = (request, generator) => {
-            const response = JSON.parse(request.requestBody)
-            const isUsernameValid = response.username === "admin@admin.com"
-            const isPasswordValid = response.password === "admin"
-            if (isUsernameValid && isPasswordValid) {
-                return [200, { 'Content-Type': 'application/json' }, JSON.stringify(userExperienceData)];
-            }
-            return [401, { 'Content-Type': 'application/json' }, JSON.stringify({ "error": "Usuario invalido" })];
-        }
-
-        Server.mockPost(endPoint, requestHandler)
-        Server.on()
-    }
-
-    componentWillUnmount() {
-        Server.off()
-    }
-
-
 
     onClick = (event) => {
         event.preventDefault();
@@ -61,7 +31,7 @@ class Login extends Component {
                     username: this.state.email,
                     password: this.state.password
                 }
-                axios.post('/router/auth/oauth/token', body).then(({ data }) => {
+                login(body).then(({ data }) => {
                     sessionStorage.setItem("userCredentials", JSON.stringify(data));
                     alert("Usuario logado");
                     this.props.history.push('/projects');
