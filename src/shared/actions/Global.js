@@ -1,0 +1,1 @@
+export const env = "http://ec2-18-220-169-89.us-east-2.compute.amazonaws.com"
