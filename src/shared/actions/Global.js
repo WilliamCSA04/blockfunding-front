@@ -5,10 +5,10 @@ const portWallet = ":8083"
 
 export function getEnv(type){
     if(type === "project"){
-        return authEnv();
+        return projectEnv();
     }
     if(type === "auth"){
-        return projectEnv();
+        return authEnv();
     }
     if(type === "wallet"){
         return walletEnv();
