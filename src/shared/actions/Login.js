@@ -1,6 +1,6 @@
 import axios from "axios";
-import { env } from "./Global";
+import { getEnv } from "./Global";
 
 export function login(body){
-    return axios.post(`${env}/router/auth/oauth/token`, body)
+    return axios.post(`${getEnv("auth")}/router/auth/oauth/token`, body)
 }

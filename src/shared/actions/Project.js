@@ -1,10 +1,10 @@
 import axios from "axios";
-import { env } from "./Global";
+import { getEnv } from "./Global";
 
 export function create(body){
-    return axios.post(`${env}/`, body)
+    return axios.post(`${getEnv("project")}/`, body)
 }
 
 export function read(body){
-    return axios.get(`${env}/`, body)
+    return axios.get(`${getEnv("project")}/`, body)
 }
