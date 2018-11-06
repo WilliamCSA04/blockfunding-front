@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Register from '../../components/Register';
-import { Server } from 'react-mock';
 import { Button, CardBody, CardHeader, FormGroup, Input, Label, Form } from 'reactstrap';
 import { create } from '../../../shared/actions/Project'
 
@@ -17,24 +16,14 @@ class ProjectRegister extends Component {
     }
 
     componentWillMount() {
-        const endPoint = '/project'
 
         const projectData = {
             "name": this.state.name,
             "description": this.state.description,
             "neededFunds": this.state.funds,
         }
-
-        const requestHandler = (request, generator) => {
-            return [200, { 'Content-Type': 'application/json' }, JSON.stringify(projectData)];
-        }
-        Server.mockPost(endPoint, requestHandler)
-        Server.on()
     }
 
-    componentWillUnmount() {
-        Server.off()
-    }
     onChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }
