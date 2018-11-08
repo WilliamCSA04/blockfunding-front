@@ -15,7 +15,7 @@ class ProjectsList extends Component {
                       <p className="project-small-desc">{this.props.description}</p>
                       <div className="project-info">
                         <div><i className="fa fa-users"></i> 110 Investors</div>
-                        <div><i className="fa fa-money"></i> 920</div>
+                        <div><i className="fa fa-money"></i> 920/{this.props.neededFunds}</div>
                       </div>
                     </div>
                   </div>
