@@ -1,4 +1,4 @@
-const env = "http://18.224.212.231"
+const env = "http://18.191.175.246"
 const portProject = ":8081"
 const portAuth = ":8082"
 const portWallet = ":8083"

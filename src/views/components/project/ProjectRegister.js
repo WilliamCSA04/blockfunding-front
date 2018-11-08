@@ -9,20 +9,12 @@ class ProjectRegister extends Component {
         super(props);
 
         this.state = {
-            email: "",
+            name: "",
             description: "",
             funds: "",
         }
     }
 
-    componentWillMount() {
-
-        const projectData = {
-            "name": this.state.name,
-            "description": this.state.description,
-            "neededFunds": this.state.funds,
-        }
-    }
 
     onChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
@@ -31,7 +23,7 @@ class ProjectRegister extends Component {
     onClick = (event) => {
         event.preventDefault();
         const body = {
-            name: this.state.email,
+            name: this.state.name,
             description: this.state.description,
             neededFunds: this.state.funds
         }
