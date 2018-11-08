@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
+import { read } from '../../../shared/actions/Project'
 import './projects.sass';
 
 class Projects extends Component {
+
+
+    componentWillMount(){
+        read().then(({ data }) => {
+            console.log(data)
+        })
+    }
+
+
     render() {
         return (
             <React.Fragment>
