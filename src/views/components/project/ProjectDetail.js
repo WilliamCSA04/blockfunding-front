@@ -5,11 +5,19 @@ import { read } from '../../../shared/actions/Project'
 
 class Project extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            name: "",
+            neededFunds: 0,
+            description: ""
+        }
+    }
     
-    componentWillMount() {
+    componentDidMount() {
         const id = this.props.match.params.id
         read(id).then(({ data }) => {
-            
+            this.setState(data)
         });
     }
     
@@ -20,8 +28,8 @@ class Project extends Component {
                 <div className="project-header">
                     <div className="header-image text-center">
                         <div className="header-title">
-                            <h1>AI Project</h1>
-                            <h2>Help me make a AI to identify payment frauds.</h2>
+                            <h1>{this.state.name}</h1>
+                            <h2>{this.state.description}</h2>
                         </div>
                     </div>
                     <div className="bg-white">
@@ -39,7 +47,7 @@ class Project extends Component {
                                 <div className="left-content">
                                     <div className="content-topic bg-white">
                                         <div>Valor arrecadado: <span className="green-font">R$: 1000,00</span></div>
-                                        <div>Valor necessário: <span className="red-font">R$: 2300,00</span></div>
+                                        <div>Valor necessário: <span className="red-font">R$: {this.state.neededFunds},00</span></div>
                                     </div>
                                 </div>
                             </Col>
