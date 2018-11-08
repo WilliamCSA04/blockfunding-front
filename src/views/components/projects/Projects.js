@@ -24,7 +24,7 @@ class Projects extends Component {
     renderProjects = () => {
         console.log(this.state.projects)
         return this.state.projects.map(project => {
-            return (<ProjectsList title={project.name} description={project.description} />)
+            return (<ProjectsList id={project.id} title={project.name} description={project.description} />)
         });
     }
 
