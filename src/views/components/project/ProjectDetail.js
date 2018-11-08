@@ -7,9 +7,9 @@ class Project extends Component {
 
     
     componentWillMount() {
-        const body = {}
-        read(body).then(data => {
-
+        const id = this.props.match.params.id
+        read(id).then(({ data }) => {
+            
         });
     }
     

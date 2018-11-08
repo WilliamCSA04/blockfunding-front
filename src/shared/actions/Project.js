@@ -5,6 +5,6 @@ export function create(body){
     return axios.post(`${getEnv("project")}/`, body)
 }
 
-export function read(){
-    return axios.get(`${getEnv("project")}/`)
+export function read(id = ""){
+    return axios.get(`${getEnv("project")}/${id}`)
 }
