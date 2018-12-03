@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Register from '../../components/Register';
 import { Button, CardBody, CardHeader, FormGroup, Input, Label, Form } from 'reactstrap';
+import { create } from '../../../shared/actions/Wallet';
 
 class WalletRegister extends Component {
 
@@ -26,6 +27,9 @@ class WalletRegister extends Component {
             owner: 1,
             type: "PERSONAL"
         }
+        create(body).then(({ data }) => {
+            alert("Created");
+        })
     }
 
     render() {
