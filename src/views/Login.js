@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
-import { login } from '../shared/actions/Login';
+import { login, loggedUser } from '../shared/actions/Login';
 
 class Login extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
+            username: "",
             password: ""
         }
     }
@@ -21,19 +21,20 @@ class Login extends Component {
 
     onClick = (event) => {
         event.preventDefault();
-        if (this.state.email.length === 0) {
-            alert("Por favor, preencha um email");
+        if (this.state.username.length === 0) {
+            alert("Por favor, preencha um username");
         } else {
             if (this.state.password.length === 0) {
                 alert("Por favor, preencha uma senha")
             } else {
                 const body = {
-                    username: this.state.email,
+                    username: this.state.username,
                     password: this.state.password
                 }
                 login(body).then(({ data }) => {
-                    sessionStorage.setItem("userCredentials", JSON.stringify(data));
+                    sessionStorage.token = JSON.stringify(data)
                     alert("Usuario logado");
+                    loggedUser();
                     this.props.history.push('/projects');
                 }).catch((data) => {
                     alert(data.response.data.error)
@@ -60,7 +61,7 @@ class Login extends Component {
                                                         <i className="icon-user"></i>
                                                     </InputGroupText>
                                                 </InputGroupAddon>
-                                                <Input type="email" placeholder="Email" autoComplete="username" name="email" onChange={this.onChange} />
+                                                <Input type="text" placeholder="username" autoComplete="username" name="username" onChange={this.onChange} />
                                             </InputGroup>
                                             <InputGroup className="mb-4">
                                                 <InputGroupAddon addonType="prepend">

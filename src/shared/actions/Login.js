@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getEnv } from "./Global";
 
-export function apikey(){
+function apikey(){
     if(sessionStorage.token === undefined){
         const config = {
             headers: {
@@ -16,9 +16,27 @@ export function apikey(){
     }
 }
 
+export function loggedUser(){
+    let token = JSON.parse(sessionStorage.token)
+    const config = {
+        headers: {
+            Authorization: `bearer ${token.access_token}`
+        }
+      };
+    axios.get(`${getEnv("auth")}/me`, config).then(({ data }) => {
+        sessionStorage.userCredentials = JSON.stringify(data)
+    })
+}
+
 export function login(body){
-    apikey();
-    return axios.post(`${getEnv("auth")}/oauth/token`, body)
+    const config = {
+        headers: {
+          "Accept": "application/json",
+          "Authorization": "Basic YXBpbWFzdGVyOmFwaXNlY3JldA==",
+          "Content-Type": "application/x-www-form-urlencoded",
+        }
+      };
+    return axios.post(`${getEnv("auth")}/oauth/token?grant_type=password&username=${body.username}&password=${body.password}`, {}, config)
 }
 
 export function create(body){
@@ -32,3 +50,4 @@ export function create(body){
       console.log(config)
     return axios.post(`${getEnv("auth")}/user`, body, config)
 }
+
