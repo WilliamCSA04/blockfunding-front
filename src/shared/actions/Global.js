@@ -2,6 +2,7 @@ const env = "http://localhost"
 const portProject = ":8081"
 const portAuth = ":8082"
 const portWallet = ":8083"
+const portDiscussion = ":8084"
 
 export function getEnv(type){
     if(type === "project"){
@@ -12,6 +13,9 @@ export function getEnv(type){
     }
     if(type === "wallet"){
         return walletEnv();
+    }
+    if(type === "discussion"){
+        return discussionEnv();
     }
 }
 
@@ -25,4 +29,8 @@ function projectEnv(){
 
 function authEnv(){
     return `${env}${portAuth}`
+}
+
+function discussionEnv(){
+    return `${env}${portDiscussion}`
 }
