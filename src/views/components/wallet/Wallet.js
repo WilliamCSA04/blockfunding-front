@@ -21,10 +21,11 @@ class WalletRegister extends Component {
 
     onClick = (event) => {
         event.preventDefault();
+        const user = JSON.parse(sessionStorage.userCredentials)
         const body = {
             name: this.state.name,
             description: this.state.description,
-            owner: 1,
+            owner: user.username,
             type: "PERSONAL"
         }
         create(body).then(({ data }) => {
