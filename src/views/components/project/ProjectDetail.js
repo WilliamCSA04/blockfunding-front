@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import './project.sass';
 import { read } from '../../../shared/actions/Project'
+import Discussion from '../discussion/DiscussionRegister'
 
 class Project extends Component {
 
@@ -54,7 +55,7 @@ class Project extends Component {
                             <Col xs="12" sm="8" md="6">
                                 <div className="middle-content">
                                     <div className="content-topic bg-white">
-                                        middle area
+                                        <Discussion />
                                         <div style={{ height: 35 + 'em' }}></div>
                                     </div>
                                 </div>
