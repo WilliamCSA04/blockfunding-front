@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './styles/style.css';
 import 'simple-line-icons/css/simple-line-icons.css';
 
+import Account from './views/components/account/Account';
 import Header from './views/components/header/Header';
 import Footer from './views/components/footer/Footer';
 import NotFound from './NotFound';
@@ -24,6 +25,7 @@ ReactDOM.render(
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact={true} component={Home} />
+                <Route path="/account" exact={true} component={Account} />
                 <Route path="/login" exact={true} component={Login} />
                 <Route path="/register" exact={true} component={Register} />
                 <Route path="/project/register" exact={true} component={ProjectRegister} />
