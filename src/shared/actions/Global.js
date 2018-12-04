@@ -1,7 +1,7 @@
 const env = "http://localhost"
 const portProject = ":8081"
 const portAuth = ":8082"
-const portWallet = ":8083"
+const portWallet = ":8083/wallet"
 const portDiscussion = ":8084"
 
 export function getEnv(type){

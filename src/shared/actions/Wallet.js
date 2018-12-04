@@ -8,7 +8,7 @@ export function create(body){
             Authorization: `bearer ${token.access_token}`
         }
       };
-    return axios.post(`${getEnv("wallet")}/wallet/`, body, config)
+    return axios.post(`${getEnv("wallet")}`, body, config)
 }
 
 export function read(id = ""){
