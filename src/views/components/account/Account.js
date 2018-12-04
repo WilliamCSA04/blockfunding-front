@@ -36,7 +36,7 @@ class Account extends Component {
             return <ProjectList id={project.id} title={project.name} description={project.description} neededFunds={project.neededFunds} />
         })
         const wallets = this.state.wallets.map(wallet => {
-            return <WalletsList title={wallet.name} description={wallet.description} funds={wallet.funds} />
+            return <WalletsList id={wallet.id} title={wallet.name} description={wallet.description} funds={wallet.funds} />
         })
         return (
             <React.Fragment>
