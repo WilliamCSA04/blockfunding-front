@@ -23,7 +23,7 @@ class UserRegister extends Component {
   onClick = (e) => {
     e.preventDefault();
     create(this.state).then(({data}) => {
-      sessionStorage.setItem("userCredentials", JSON.stringify(data))
+      this.props.history.push("/login")
     })
   }
 
