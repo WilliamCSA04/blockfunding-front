@@ -33,7 +33,7 @@ class Account extends Component {
 
     render() {
         const projects = this.state.projects.map(project => {
-            return <ProjectList title={project.name} description={project.description} neededFunds={project.neededFunds} />
+            return <ProjectList id={project.id} title={project.name} description={project.description} neededFunds={project.neededFunds} />
         })
         const wallets = this.state.wallets.map(wallet => {
             return <WalletsList title={wallet.name} description={wallet.description} funds={wallet.funds} />
