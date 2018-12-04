@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import './project.sass';
 import { read } from '../../../shared/actions/Project'
+import { read as readDiscussions } from '../../../shared/actions/Discussion'
 import Discussion from '../discussion/DiscussionRegister'
+import DiscussionsList from '../discussion/DiscussionsList'
 
 class Project extends Component {
 
@@ -11,7 +13,8 @@ class Project extends Component {
         this.state = {
             name: "",
             neededFunds: 0,
-            description: ""
+            description: "",
+            discussions: []
         }
     }
     
@@ -20,10 +23,18 @@ class Project extends Component {
         read(id).then(({ data }) => {
             this.setState(data)
         });
+        readDiscussions().then(({ data }) => {
+            this.setState({discussions: data.content.filter(discussion => {
+                return discussion.projectId == this.props.match.params.id
+            })})
+        })
     }
     
 
     render() {
+        const discussions = this.state.discussions.map(discussion => {
+            return <DiscussionsList name={discussion.ownerName} text={discussion.text} />
+        })
         return (
             <React.Fragment>
                 <div className="project-header">
@@ -56,6 +67,7 @@ class Project extends Component {
                                 <div className="middle-content">
                                     <div className="content-topic bg-white">
                                         <Discussion projectId={this.props.match.params.id}/>
+                                        {discussions}
                                         <div style={{ height: 35 + 'em' }}></div>
                                     </div>
                                 </div>
