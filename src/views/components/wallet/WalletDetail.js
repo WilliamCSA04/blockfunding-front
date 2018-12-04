@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Col, Container, Row } from 'reactstrap';
 import { read } from '../../../shared/actions/Wallet'
+import Register from '../../components/Register';
+import { Button, CardBody, CardHeader, FormGroup, Input, Label, Form } from 'reactstrap';
+
 
 class Wallet extends Component {
 
@@ -35,10 +37,6 @@ class Wallet extends Component {
           </CardHeader>
           <CardBody>
               <Form>
-                  <FormGroup>
-                      <Label htmlFor="Wallet">Wallet Name</Label>
-                      <Input type="text" placeholder="Type a name to your wallet" name="name" />
-                  </FormGroup>
                   <FormGroup>
                       <Label htmlFor="vat">Amount</Label>
                       <Input type="text"  placeholder="How much you want to add" name="amount" />
