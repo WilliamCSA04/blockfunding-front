@@ -17,6 +17,7 @@ import Register from './views/components/users/UserRegister'
 import Projects from './views/components/projects/Projects'
 import ProjectDetail from './views/components/project/ProjectDetail'
 import WalletRegister from './views/components/wallet/Wallet'
+import WalletDetail from './views/components/wallet/WalletDetail'
 import Home from './views/components/home/Home';
 
 ReactDOM.render(
@@ -32,6 +33,7 @@ ReactDOM.render(
                 <Route path="/project/:id" exact={true} component={ProjectDetail} />
                 <Route path="/projects" exact={true} component={Projects} />
                 <Route path="/wallet/register" exact={true} component={WalletRegister} />
+                <Route path="/wallet/:id" exact={true} component={WalletDetail} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </ BrowserRouter>
