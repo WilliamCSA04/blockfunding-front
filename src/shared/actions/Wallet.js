@@ -14,3 +14,7 @@ export function create(body){
 export function read(id = ""){
     return axios.get(`${getEnv("wallet")}/${id}`)
 }
+
+export function credit(body){
+    return axios.post(`${getEnv("funds")}/credit`, body)
+}
