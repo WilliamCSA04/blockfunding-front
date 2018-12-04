@@ -22,10 +22,12 @@ class ProjectRegister extends Component {
 
     onClick = (event) => {
         event.preventDefault();
+        const user = JSON.parse(sessionStorage.userCredentials)
         const body = {
             name: this.state.name,
             description: this.state.description,
-            neededFunds: this.state.funds
+            neededFunds: this.state.funds,
+            owner: user.username
         }
         create(body).then(({ data }) => {
             alert("Projeto criado")
