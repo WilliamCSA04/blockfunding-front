@@ -22,9 +22,12 @@ class DiscussionRegister extends Component {
     onClick = (e) => {
         e.preventDefault();
         create(this.state).then(({ data }) => {
-            alert("Created")
+            this.props.updateDiscussions(data)
+            alert("Created");
         })
     }
+
+    
 
     render() {
         return (

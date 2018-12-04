@@ -30,6 +30,11 @@ class Project extends Component {
         })
     }
     
+    updateDiscussions = (newDiscussion) => {
+        const discussions = this.state.discussions;
+        discussions.push(newDiscussion);
+        this.setState({discussions: discussions});
+    }
 
     render() {
         const discussions = this.state.discussions.map(discussion => {
@@ -66,7 +71,7 @@ class Project extends Component {
                             <Col xs="12" sm="8" md="6">
                                 <div className="middle-content">
                                     <div className="content-topic bg-white">
-                                        <Discussion projectId={this.props.match.params.id}/>
+                                        <Discussion projectId={this.props.match.params.id} updateDiscussions={this.updateDiscussions}/>
                                         {discussions}
                                         <div style={{ height: 35 + 'em' }}></div>
                                     </div>
