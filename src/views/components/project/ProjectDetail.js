@@ -55,7 +55,7 @@ class Project extends Component {
                             <Col xs="12" sm="8" md="6">
                                 <div className="middle-content">
                                     <div className="content-topic bg-white">
-                                        <Discussion />
+                                        <Discussion projectId={this.props.match.params.id}/>
                                         <div style={{ height: 35 + 'em' }}></div>
                                     </div>
                                 </div>
