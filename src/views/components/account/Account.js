@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { read as readProject } from '../../../shared/actions/Project'
 import { read as readWallet } from '../../../shared/actions/Wallet'
 import ProjectList from '../projects/ProjectsList'
+import WalletsList from '../wallet/WalletsList'
 
 class Account extends Component {
 
@@ -34,6 +35,9 @@ class Account extends Component {
         const projects = this.state.projects.map(project => {
             return <ProjectList title={project.name} description={project.description} neededFunds={project.neededFunds} />
         })
+        const wallets = this.state.wallets.map(wallet => {
+            return <WalletsList title={wallet.name} description={wallet.description} funds={wallet.funds} />
+        })
         return (
             <React.Fragment>
       <div className="bg-white projects recent-project">
@@ -50,6 +54,21 @@ class Account extends Component {
           </div>
         </Container>
       </div>
+
+      <div className="bg-white projects recent-project">
+
+        <Container>
+          <div className="projects-header">
+            <h1 className="projects-title">My wallets</h1>
+          </div>
+          <div className="projects-content">
+            <Row>
+                {wallets}
+                </Row>
+          </div>
+        </Container>
+      </div>
+      
             </React.Fragment>
         );
     }
