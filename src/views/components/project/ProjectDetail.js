@@ -24,7 +24,7 @@ class Project extends Component {
             this.setState(data)
         });
         readDiscussions().then(({ data }) => {
-            this.setState({discussions: data.content.filter(discussion => {
+            this.setState({discussions: data.content.reverse().filter(discussion => {
                 return discussion.projectId == this.props.match.params.id
             })})
         })
@@ -32,7 +32,7 @@ class Project extends Component {
     
     updateDiscussions = (newDiscussion) => {
         const discussions = this.state.discussions;
-        discussions.push(newDiscussion);
+        discussions.unshift(newDiscussion);
         this.setState({discussions: discussions});
     }
 
