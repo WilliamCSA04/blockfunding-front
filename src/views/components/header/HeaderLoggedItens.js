@@ -18,6 +18,9 @@ class HeaderLoggedItens extends Component {
                     <DropdownItem href="/project/register">
                         Create project
                     </DropdownItem>
+                    <DropdownItem href="/wallet/register">
+                        Create wallet
+                    </DropdownItem>
                     <DropdownItem href="/dashboard">
                         Dashboard
                     </DropdownItem>
